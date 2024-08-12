@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+    <script>
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function playGame(){
+            function getComputerChoice(max){
+            return Math.floor(Math.random()*max);
+        }
+
+        let pcAns = getComputerChoice(3)
+
+        if(pcAns == 0)
+        {
+            console.log("rock")
+            pcAns = "rock";
+        }
+
+        else if (pcAns == 1)
+        {
+            console.log("paper")
+            pcAns = "paper";
+        }
+
+        else if (pcAns == 2)
+        {
+            console.log("scissors")
+            pcAns = "scissors";
+        }
+
+        function getHumanChoice(){
+            let humanAns = prompt("Enter Your Choice, Human!")
+            return humanAns = humanAns.toLowerCase()
+        }
+        let humanAns = getHumanChoice()
+
+
+        function playRound(humanChoice, computerChoice) {
+            if (humanChoice == computerChoice)
+            {
+                alert("This Round is Tie!")
+            }
+            else if (humanChoice == "rock" && computerChoice == "paper")
+            {
+                alert("Computer Wins this round by choosing paper!")
+                computerScore++;
+            }
+            else if (humanChoice == "rock" && computerChoice == "scissors")
+            {
+                alert("Human Wins this round as computer chose scissors!")
+                humanScore++;
+            }
+            else if (humanChoice == "paper" && computerChoice == "rock")
+            {
+                alert("Human Wins this round as computer chose rock!")
+                humanScore++;
+            }
+            else if (humanChoice == "paper" && computerChoice == "scissors")
+            {
+                alert("Computer Wins this round by choosing scissors!")
+                computerScore++;
+            }
+            else if (humanChoice == "scissors" && computerChoice == "rock")
+            {
+                alert("Computer Wins this round by choosing rock!")
+                computerScore++;
+            }
+            else if (humanChoice == "scissors" && computerChoice == "paper")
+            {
+                alert("Human Wins this round as computer chose paper!")
+                humanScore++;
+            }
+        }
+        playRound(humanAns, pcAns);
+        }
+
+        playGame();
+        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+        playGame();
+        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+        playGame();
+        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+        playGame();
+        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+        playGame();
+        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+
+
+        if (humanScore > computerScore)
+        alert("Humans Won the Game! Phew..., " + "The Score was\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+
+        else if (humanScore < computerScore)
+        alert("Computer Won the Game! Oh no..., " + "The Score was\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+
+        else
+        alert("The Game ended in a Tie! " + "The Score was\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
+        
+    </script>
+</body>
+</html>
