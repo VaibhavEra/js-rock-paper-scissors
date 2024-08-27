@@ -1,0 +1,58 @@
+body {
+    font-family: 'Silkscreen';
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* * {
+    outline: 2px solid red;
+} */
+
+a {
+    text-decoration: none;
+}
+
+#header {
+    background-color: #589595;
+    padding: 1px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+img {
+    margin: 20px;
+    border-radius: 50%;
+    border: 5px solid transparent; 
+}
+
+img:hover {
+    cursor: pointer;
+    opacity: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    gap: 100px;
+}
+
+#instructions {
+    font-size: 22px;
+    color: #589595;
+}
