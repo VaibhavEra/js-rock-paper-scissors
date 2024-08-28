@@ -4,6 +4,7 @@ body {
     color: white;
     margin: 0px;
     padding: 0px;
+    text-align: center;
 }
 
 /* * {
@@ -18,17 +19,13 @@ a {
     background-color: #589595;
     padding: 1px;
     font-size: 22px;
-    text-align: center;
-}
-
-.center {
-    text-align: center;
 }
 
 #options {
     display: flex;
     justify-content: center;
     padding: 20px;
+    margin-bottom: 30px;
 }
 
 img {
@@ -50,9 +47,19 @@ img:hover {
     text-align: center;
     font-size: 40px;
     gap: 100px;
+    margin-top: 20px;
 }
 
-#instructions {
+#message {
     font-size: 22px;
     color: #589595;
+    background-color: #225762;
+    display: inline;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.humanScore, .computerScore {
+    font-size: 100px;
+    margin: 0;
 }
