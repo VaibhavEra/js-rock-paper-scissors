@@ -4,6 +4,19 @@
     const comp_score = document.querySelector('.computerScore')
     const human_score = document.querySelector('.humanScore')
 
+    const message = document.querySelector('#message')
+
+// to get humans's choice
+    const humanChoice = document.querySelectorAll('.choice')
+        
+    humanChoice.forEach((choice) => {
+        choice.addEventListener("click", () => {
+            const humanAns = choice.id;
+            playGame(humanAns)
+        })
+    })
+
+
 // to get Computer's choice randomly
     const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 
@@ -15,17 +28,6 @@
     }
 
 
-// to get humans's choice
-    const humanChoice = document.querySelectorAll('.choice')
-    
-    humanChoice.forEach((choice) => {
-        choice.addEventListener("click", () => {
-            const humanAns = choice.id;
-          playGame(humanAns)
-        })
-    })
-
-
 // play round
     function playRound(hChoice, pChoice){
 
@@ -34,7 +36,7 @@
             console.log("The game is tie")
             message.style.backgroundColor = "white";
             message.style.color = "#589595";
-            message.innerText = 'The Round is Tie! Both chose'
+            message.innerText = `The Round is Tie! Both chose ${hChoice}`
         }
         else if (hChoice == "rock")
         {
@@ -43,7 +45,7 @@
                 console.log("The round is won by computer")
                 message.style.backgroundColor = "red"
                 message.style.color = "white"
-                message.innerText = "The round was won by Computer"
+                message.innerText = `The round was won by Computer as they chose ${pChoice} and you chose ${hChoice}`
                 computerScore++;
                 comp_score.innerText = computerScore;
             }
@@ -52,7 +54,7 @@
                 console.log("The round is won by Humans")
                 message.style.backgroundColor = "green"
                 message.style.color = "white"
-                message.innerText = "The round was won by Humans"
+                message.innerText = `The round was won by Humans as you chose ${hChoice} and they chose ${pChoice}`
                 humanScore++;
                 human_score.innerText = humanScore;
             }
@@ -64,19 +66,19 @@
                 console.log("The round is won by computer")
                 message.style.backgroundColor = "red"
                 message.style.color = "white"
-                message.innerText = "The round was won by Computer"
+                message.innerText = `The round was won by Computer as they chose ${pChoice} and you chose ${hChoice}`
                 computerScore++;
                 comp_score.innerText = computerScore;
             }
             else if (pChoice == "spock" || pChoice =="rock")
-                {
-                    console.log("The round is won by Humans")
-                    message.style.backgroundColor = "green"
-                    message.style.color = "white"
-                    message.innerText = "The round was won by Humans"
-                    humanScore++;
-                    human_score.innerText = humanScore;
-                }
+            {
+                console.log("The round is won by Humans")
+                message.style.backgroundColor = "green"
+                message.style.color = "white"
+                message.innerText = `The round was won by Humans as you chose ${hChoice} and they chose ${pChoice}`
+                humanScore++;
+                human_score.innerText = humanScore;
+            }
         }
         else if (hChoice == "scissors")
         {
@@ -85,19 +87,19 @@
                 console.log("The round is won by computer")
                 message.style.backgroundColor = "red"
                 message.style.color = "white"
-                message.innerText = "The round was won by Computer"
+                message.innerText = `The round was won by Computer as they chose ${pChoice} and you chose ${hChoice}`
                 computerScore++;
                 comp_score.innerText = computerScore;
             }
             else if (pChoice == "paper" || pChoice =="lizard")
-                {
-                    console.log("The round is won by Humans")
-                    message.style.backgroundColor = "green"
-                    message.style.color = "white"
-                    message.innerText = "The round was won by Humans"
-                    humanScore++;
-                    human_score.innerText = humanScore;
-                }
+            {
+                console.log("The round is won by Humans")
+                message.style.backgroundColor = "green"
+                message.style.color = "white"
+                message.innerText = `The round was won by Humans as you chose ${hChoice} and they chose ${pChoice}`
+                humanScore++;
+                human_score.innerText = humanScore;
+            }
         }
         else if (hChoice == "spock")
         {
@@ -106,19 +108,19 @@
                 console.log("The round is won by computer")
                 message.style.backgroundColor = "red"
                 message.style.color = "white"
-                message.innerText = "The round was won by Computer"
+                message.innerText = `The round was won by Computer as they chose ${pChoice} and you chose ${hChoice}`
                 computerScore++;
                 comp_score.innerText = computerScore;
             }
             else if (pChoice == "rock" || pChoice =="scissors")
-                {
-                    console.log("The round is won by Humans")
-                    message.style.backgroundColor = "green"
-                    message.style.color = "white"
-                    message.innerText = "The round was won by Humans"
-                    humanScore++;
-                    human_score.innerText = humanScore;
-                }
+            {
+                console.log("The round is won by Humans")
+                message.style.backgroundColor = "green"
+                message.style.color = "white"
+                message.innerText = `The round was won by Humans as you chose ${hChoice} and they chose ${pChoice}`
+                humanScore++;
+                human_score.innerText = humanScore;
+            }
         }
         else if (hChoice == "lizard")
         {
@@ -127,30 +129,44 @@
                 console.log("The round is won by computer")
                 message.style.backgroundColor = "red"
                 message.style.color = "white"
-                message.innerText = "The round was won by Computer"
+                message.innerText = `The round was won by Computer as they chose ${pChoice} and you chose ${hChoice}`
                 computerScore++;
                 comp_score.innerText = computerScore;
             }
             else if (pChoice == "paper" || pChoice =="spock")
-                {
-                    console.log("The round is won by Humans")
-                    message.style.backgroundColor = "green"
-                    message.style.color = "white"
-                    message.innerText = "The round was won by Humans"
-                    humanScore++;
-                    human_score.innerText = humanScore;
-                }
-        }
-        if (humanScore == 5 || computerScore == 5)
             {
-                if(alert('Game Over!\nClick on "OK" to play again!')){}
-                else window.location.reload(); 
-            }        
+                console.log("The round is won by Humans")
+                message.style.backgroundColor = "green"
+                message.style.color = "white"
+                message.innerText = `The round was won by Humans as you chose ${hChoice} and they chose ${pChoice}`
+                humanScore++;
+                human_score.innerText = humanScore;
+            }
+        }
+        if  (humanScore == 5 || computerScore == 5)
+            {
+                setTimeout(() => {gameover(humanScore, computerScore)}, 100)
+            }
     }
 
-// message box
-    const message = document.querySelector('#message')
+// function when game is over and want to restart
+    function gameover(h,c){
+        if(h > c)
+        {
+            alert(`Final Score was:\nHumans: ${h}\nBots: ${c}\nHumans Win!`)
+            if(alert('Game Over!\nClick on "OK" to play again!')){}
+            else window.location.reload(); 
+        }
+        else if(h < c)
+        {
+            alert(`Final Score was:\nHumans: ${h}\nBots: ${c}\nBOTS Win!`)
+            if(alert('Game Over!\nClick on "OK" to play again!')){}
+            else window.location.reload(); 
+        }
+    }
 
-// game end and new game
+
+
+
 
     

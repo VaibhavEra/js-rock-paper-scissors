@@ -3,105 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock-Paper-Scissors</title>
+    <title>Rock Papepr Scissors with UI</title>
+    <link href='https://fonts.googleapis.com/css?family=Silkscreen' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        let humanScore = 0;
-        let computerScore = 0;
+    <div id="header"><h1>Rock-Paper-Scissors-Lizard-Spock</h1></div>
 
-        function playGame(){
-            function getComputerChoice(max){
-            return Math.floor(Math.random()*max);
-        }
+    <div><h2>It's <strong>Humans v/s BOTs!</strong>, so Choose an option to play!</h2></div>
 
-        let pcAns = getComputerChoice(3)
+    <div id="options">
+        <img id="rock" class="choice" src="./images/rock.png" alt="hand sign of rock" height="150px">
+        <img id="paper" class="choice" src="./images/paper.png" alt="hand sign of paper" height="150px">
+        <img id="scissors" class="choice" src="./images/scissors.png" alt="hand sign of scissors" height="150px">
+        <img id="lizard" class="choice" src="./images/lizard.png" alt="hand sign of lizard" height="150px">
+        <img id="spock" class="choice" src="./images/spock.png" alt="hand sign of spock" height="150px">
+    </div>
 
-        if(pcAns == 0)
-        {
-            console.log("rock")
-            pcAns = "rock";
-        }
+    <div id="message">First to win 5 rounds, Wins the game!</div>
 
-        else if (pcAns == 1)
-        {
-            console.log("paper")
-            pcAns = "paper";
-        }
+    <div id="scoreboard">
+        <div>
+            <p>Your Score</p>
+            <p class="humanScore">0</p>
+        </div>
 
-        else if (pcAns == 2)
-        {
-            console.log("scissors")
-            pcAns = "scissors";
-        }
+        <div>
+            <p>Computer's Score</p>
+            <p class="computerScore">0</p>
+        </div>
+    </div>
 
-        function getHumanChoice(){
-            let humanAns = prompt("Enter Your Choice, Human!")
-            return humanAns = humanAns.toLowerCase()
-        }
-        let humanAns = getHumanChoice()
+    <div>
+        <h2 style="margin-top: 150px;">Logic of the game -> <a href="https://www.samkass.com/theories/RPSSL.html" target="_blank" rel="noopener noreferrer">Credits: Sam Kass, Karen Bryla & Big bang theory</a></h2>
+        <img src="./images/pngwing.com.png" alt="Chart explaning how the game is played">
+    </div>
 
-
-        function playRound(humanChoice, computerChoice) {
-            if (humanChoice == computerChoice)
-            {
-                alert("This Round is a Tie!")
-            }
-            else if (humanChoice == "rock" && computerChoice == "paper")
-            {
-                alert("Computer Wins this round by choosing paper!")
-                computerScore++;
-            }
-            else if (humanChoice == "rock" && computerChoice == "scissors")
-            {
-                alert("Human Wins this round as computer chose scissors!")
-                humanScore++;
-            }
-            else if (humanChoice == "paper" && computerChoice == "rock")
-            {
-                alert("Human Wins this round as computer chose rock!")
-                humanScore++;
-            }
-            else if (humanChoice == "paper" && computerChoice == "scissors")
-            {
-                alert("Computer Wins this round by choosing scissors!")
-                computerScore++;
-            }
-            else if (humanChoice == "scissors" && computerChoice == "rock")
-            {
-                alert("Computer Wins this round by choosing rock!")
-                computerScore++;
-            }
-            else if (humanChoice == "scissors" && computerChoice == "paper")
-            {
-                alert("Human Wins this round as computer chose paper!")
-                humanScore++;
-            }
-        }
-        playRound(humanAns, pcAns);
-        }
-
-        playGame();
-        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-        playGame();
-        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-        playGame();
-        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-        playGame();
-        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-        playGame();
-        alert("Score:\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-
-
-        if (humanScore > computerScore)
-        alert("Humans Won the Game! Phew..., " + "The Score was\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-
-        else if (humanScore < computerScore)
-        alert("Computer Won the Game! Oh no..., " + "The Score was\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-
-        else
-        alert("The Game ended in a Tie! " + "The Score was\nHumans:" + " " + humanScore + " Computer:" + " " + computerScore)
-        
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
