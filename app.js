@@ -34,7 +34,7 @@
             console.log("The game is tie")
             message.style.backgroundColor = "white";
             message.style.color = "#589595";
-            message.innerText = "The Round is Tie!"
+            message.innerText = 'The Round is Tie! Both chose'
         }
         else if (hChoice == "rock")
         {
@@ -143,7 +143,7 @@
         }
         if (humanScore == 5 || computerScore == 5)
             {
-                if(alert('Game Over!')){}
+                if(alert('Game Over!\nClick on "OK" to play again!')){}
                 else window.location.reload(); 
             }        
     }
